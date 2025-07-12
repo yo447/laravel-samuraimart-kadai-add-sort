@@ -70,7 +70,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
+    'timezone' => 'JST',
+=======
     'timezone' => 'Asia/Tokyo',
+>>>>>>> 46a40a7 (Initial commit of laravel-basic-kadai)
 
     /*
     |--------------------------------------------------------------------------
