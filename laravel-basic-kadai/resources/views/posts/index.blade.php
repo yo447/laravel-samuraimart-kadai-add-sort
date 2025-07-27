@@ -16,9 +16,8 @@
       <td>{{ $post->id }}</td>
       <td>{{ $post->content }}</td>
       <td>{{ $post->title }}</td>
-      
-            
     </tr>
+    
   @endforeach
   </table>
 </body>

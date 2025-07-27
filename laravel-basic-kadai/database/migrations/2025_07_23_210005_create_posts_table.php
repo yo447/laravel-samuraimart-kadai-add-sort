@@ -14,9 +14,21 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->timestamps('created_at');
+            $table->text('content');
+            $table->string('title');
+            $table->text('t');
+            $table->text('h');
+           
+
+        });
+
+        Schema::create('posts_table_dummy', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
             $table->text('content');
             $table->string('title');
+           $table->string('col2');
 
         });
     }
