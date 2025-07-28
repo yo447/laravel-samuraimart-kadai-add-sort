@@ -17,8 +17,8 @@ return new class extends Migration
             $table->timestamps('created_at');
             $table->text('content');
             $table->string('title');
-            $table->text('t');
-            $table->text('h');
+            $table->text('text');
+            $table->text('text1');
            
 
         });

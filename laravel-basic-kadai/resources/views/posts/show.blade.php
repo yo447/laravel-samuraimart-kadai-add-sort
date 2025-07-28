@@ -16,11 +16,11 @@
        </tr>
        <tr>
            <th>タイトル</th>
-           <td>{{ $posts->t}}</td>
+           <td>{{ $posts->text}}</td>
        </tr>
        <tr>
            <th>本文</th>
-          <td>{{ $posts->h}}
+          <td>{{ $posts->text1}}
        </tr>    
        <tr>
            <th>作成日時</th>
