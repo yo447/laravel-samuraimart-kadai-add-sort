@@ -16,19 +16,19 @@
        </tr>
        <tr>
            <th>タイトル</th>
-           <td>{{ $posts->text}}</td>
+           <td>{{ $posts->title}}</td>
        </tr>
        <tr>
            <th>本文</th>
-          <td>{{ $posts->text1}}
+          <td>{{ $posts->content}}
        </tr>    
        <tr>
            <th>作成日時</th>
-           <td>{{ $posts->title }}</td>           
+           <td>{{ $posts->created_at }}</td>           
        </tr>
        <tr>
            <th>更新日時</th>
-           <td>{{ $posts->content }}</td>
+           <td>{{ $posts->updated_at }}</td>
        </tr>      
    </table>
 

@@ -28,13 +28,21 @@ Route::get('/posts', function () {
 
 Route::get('/posts', [PostController::class, 'index']);
 
+Route::post('/posts/confirm', [PostController::class, 'confirm'])->name('posts.confirm');
+
+Route::get('/posts/create', [PostController::class, 'create']);
+
+//これがいらなかったRoute::get('/posts', [PostController::class, 'create']);
+
+Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
+
 Route::get('/posts/{id}', [PostController::class, 'show']);
 
 Route::get('/posts_table_dummy/{id}', [PostController::class, 'show']);
 
-Route::get('/posts/create', [PostController::class, 'create']);
 
-Route::post('/posts/confirm', [PostController::class, 'confirm'])->name('posts.confirm');
+
+
 
 
 Route::get('/products', [ProductController::class, 'index']);

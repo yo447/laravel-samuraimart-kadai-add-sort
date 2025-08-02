@@ -8,48 +8,36 @@
 </head>
 
 <body>
-   <h1>お問い合わせ</h1>
-   <form action="{{ route('requests.confirm') }}" method="POST">
+   <h1>投稿作成</h1>
+
+   @if ($errors->any())
+       <div>
+           <ul>
+               @foreach ($errors->all() as $error)
+                   <li>{{ $error }}</li>
+               @endforeach
+           </ul>
+       </div>
+   @endif    
+
+   <form action="{{ route('posts.store') }}" method="POST">
        @csrf
        <table>
            <tr>
-               <th>お名前</th>
+               <th>タイトル</th>
                <td>
-                   <input type="text" name="user_name">
+                   <input type="text" name="title">
                </td>
            </tr>
            <tr>
-               <th>メールアドレス</th>
+               <th>本文</th>
                <td>
-                   <input type="text" name="user_email">
+                   <textarea name="content" rows="10" cols="30" id=""></textarea>
                </td>
-           </tr>
-           <tr>
-               <th>性別</th>
-               <td>
-                   <input type="radio" name="user_gender" value="男性" checked>男性
-                   <input type="radio" name="user_gender" value="女性">女性
-               </td>
-           </tr>    
-           <tr>
-               <th>お問い合わせ種別</th>
-               <td>
-                    <select name="category">
-                        <option value="ご意見やご感想">ご意見やご感想</option>
-                        <option value="不具合について">不具合について</option>
-                        <option value="その他">その他</option>
-                    </select>                    
-               </td>            
-           </tr>
-            <tr>
-                <th>お問い合わせ内容</th>
-                <td>                     
-                    <textarea name="message" cols="30" rows="10"></textarea>
-                </td>
-            </tr>      
+           </tr> 
+                   
        </table>
-       <input type="submit" value="送信">
+       <input type="submit" value="投稿">
    </form>
-</body>
 
 </html>
