@@ -10,7 +10,7 @@ use App\Models\posts;
 use App\Models\posts_table_dummy;
 
 use App\Models\Vendor;
-use App\Http\Requests\PostStoreRequest;
+//use App\Http\Requests\PostStoreRequest;
 
 
 
@@ -43,51 +43,14 @@ class PostController extends Controller
     //return view('posts.index', compact('posts'));
     }
 
-   /* public function create() {
-        return view('posts.create');
-    } 
-   *//*
-    public function confirm(Post $posts) {
-        // HTTPリクエストに含まれる、単一のパラメータの値を取得する     
-        $user_name = $posts->input('user_name');
-        $user_email = $posts->input('user_email');
-        $user_gender = $posts->input('user_gender');
-        $title = $posts->input('title');
-        $content = $posts->input('content');
-
-        // HTTPリクエストメソッド（GET、POST、PUT、PATCH、DELETEなど）を取得する
-        $method = $request->method();
-
-        // HTTPリクエストのパスを取得する
-        $path = $request->path();
-
-        // HTTPリクエストのURLを取得する
-        $url = $request->url();
-
-        // HTTPリクエストを送信したクライアントのIPアドレスを取得する
-        $ip = $request->ip();
-
-        $variables = [
-            'user_name',
-            'user_email',
-            'user_gender',
-            'title',
-            'content',
-            'method',
-            'path',
-            'url',
-            'ip'
-        ];
-
-        return view('posts.confirm', compact($variables));
-    }    */
+    
 
     
      public function create() {
         return view('posts.create');
     }
 
-    public function store(PostStoreRequest $request) {
+    public function store(Request $request) {
         // フォームの入力内容をもとに、テーブルにデータを追加する
         $request->validate([
             'title' => 'required|max:20',
@@ -102,7 +65,7 @@ class PostController extends Controller
         // リダイレクトさせる
         return redirect("/posts");
     }
-   
+
  
 }
 
