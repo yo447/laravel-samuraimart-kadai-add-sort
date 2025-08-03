@@ -54,7 +54,7 @@ class PostController extends Controller
         // フォームの入力内容をもとに、テーブルにデータを追加する
         $request->validate([
             'title' => 'required|max:20',
-            'content' => 'required|max:255'
+            'content' => 'required|max:200'
         ]);
         $posts = new posts();
         $posts->title = $request->input('title');
