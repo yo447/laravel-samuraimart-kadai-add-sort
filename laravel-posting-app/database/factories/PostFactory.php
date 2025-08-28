@@ -17,12 +17,15 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->realText(),
+           /* 
+           'title' => fake()->realText(),
             'content' => fake()->realText(),
             'user_id' => 4,
-        //ここをどうにかしないと
-           //$table->foreignId('user_id')->constrained()->cascadeOnDelete();
-
+            */
+       
+           'user_id' => 1, // usersテーブルにidカラムの値が1のユーザーが存在することが前提
+            'title' => fake()->realText(20, 5),
+            'content' => fake()->realText(200, 5)
             
 
             
